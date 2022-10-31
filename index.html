@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Business Model Canva</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./">
+                Business Model Canva
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-center" data-bs-toggle="modal" data-bs-target="#reset">
+                            <span class="btn btn-light">
+                                Réinitialiser
+                            </span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-center" data-bs-toggle="modal" data-bs-target="#export" onclick="laodit()">
+                            <span class="btn btn-light">
+                                Exporter
+                            </span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-center" data-bs-toggle="modal" data-bs-target="#import">
+                            <span class="btn btn-light">
+                                Importer
+                            </span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./preview.html" class="nav-link text-center">
+                            <span class="btn btn-info text-white">
+                                Prévisualiser
+                            </span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./save.html" target="_blanck" class="nav-link text-center">
+                            <span class="btn btn-primary text-white">
+                                Enregistrer
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="root" class="container-fluid"></div>
+    <div id="loader"></div>
+
+
+    <div class="modal fade" id="reset" tabindex="-1" aria-labelledby="resetLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="resetLabel">
+                        Réinialiser tous les données
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-danger">
+                        <strong>
+                            Si vous voulez réinitialiser toutes les données stockés cliquer oui.
+                        </strong>
+                    </p>
+                </div>
+                <div class="modal-footer border-0 justify-content-center">
+                    <button type="button" class="btn btn-danger" onclick="resetAllData()">
+                        Oui
+                    </button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Annuler
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="import" tabindex="-1" aria-labelledby="importLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="importLabel">
+                        Importer un modèle sur cet espace
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form method="post" action="./importer.php" enctype="multipart/form-data">
+                    <div class="modal-body">
+                        <p>
+                            Le fichier à importer doît avoir l'extension: <b class="text-primary">.json</b> et est généré à partir de cette application.
+                        </p>
+                        <div>
+                            <small class="text-danger">
+                                Exécuter l'importation va supprimer les données qui sont actuellement stockées sur votre espace de travail.
+                            </small>
+                        </div>
+                        <div class="input-group mt-3">
+                            <input type="file" name="import_file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Excécuter" accept=".json">
+                            <button class="btn btn-outline-primary" type="submit" id="inputGroupFileAddon04">
+                                Exécuter
+                            </button>
+                        </div>
+                    </div>
+                    <div class="modal-footer border-0 justify-content-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            Annuler
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="export" tabindex="-1" aria-labelledby="exportLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="exportLabel">
+                        Exporter ce model
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Le model actuel avec peuvent être exporter sur un autre espace de travail. Un fichier <b>.json</b> sera généré et téléchargé.
+                    </p>
+                </div>
+                <div class="modal-footer border-0 justify-content-center">
+                    <form method="post" action="./exporter.php">
+                        <textarea name="localstorage" id="zone" class="d-none"></textarea>
+                        <button type="submit" class="btn btn-primary me-2">
+                            Exporter
+                        </button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            Annuler
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/bootstrap.js"></script>
+    <script src="./js/react.development.js"></script>
+    <script src="./js/react-dom.development.js"></script>
+    <script src="./js/babel.min.js"></script>
+    <script type="text/babel" src="./js/main.js"></script>
+    <script>
+        function resetAllData() {
+            localStorage.clear();
+            window.location.href = './';
+        }
+        function renameer(val) {
+            var thereturns = '__';
+            if ( val == 1 ) {
+                thereturns = 'key_partners';
+            }
+            else if ( val == 2 ) {
+                thereturns = 'key_activities';
+            }
+            else if ( val == 3 ) {
+                thereturns = 'key_ressources';
+            }
+            else if ( val == 4 ) {
+                thereturns = 'value_proposition';
+            }
+            else if ( val == 5 ) {
+                thereturns = 'customer_relationship';
+            }
+            else if ( val == 6 ) {
+                thereturns = 'channels';
+            }
+            else if ( val == 7 ) {
+                thereturns = 'customer_segment';
+            }
+            else if ( val == 8 ) {
+                thereturns = 'cost_structure';
+            }
+            else if ( val == 9 ) {
+                thereturns = 'revenue_stream';
+            }
+
+            return thereturns;
+        }
+        function laodit() {
+            var result, theregrex;
+            result = '{';
+            theregrex = /"/;
+        
+            for ( var ae = 1; ae <= 9; ae += 1 ) {
+                result += '"' + renameer(ae) + '":';
+                result += '{';
+                if ( localStorage['key' + ae + '-0'] ) {
+                    result += '"total_item": ' + localStorage['key' + ae + '-0'];
+                }
+                else {
+                    result += '"total_item": 0';
+                }
+                for ( var ai = 1, ac = localStorage["key" + ae + "-0"]; ai <= ac; ai += 1 ) {
+                    if ( localStorage["key" + ae + "-" + ai] ) {
+                        var thedata = localStorage["key" + ae + "-" + ai];
+                        // thedata = thedata.replace(theregrex, '\"');
+                        result += ',"item' + ai + '": "' + thedata + '"';
+                    }
+                }
+                result += '}';
+                if ( ae != 9 ) {
+                    result += ','
+                }
+            }
+            result += '}';
+
+            document.getElementById('zone').innerText = result
+        }
+    </script>
+</body>
+
+</html>

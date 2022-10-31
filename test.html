@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div > span {
+            margin: 10px;
+            background-color: black;
+            padding: 20px;
+        }
+        .ok {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        .ok > div {
+            border: 1px solid black;
+            margin: 20px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        Base de données locales
+    </h1>
+    <div>
+        <span onclick="add()">+</span>
+        <span onclick="remove()">-</span>
+    </div>
+    <div class="ok">
+        <div id="list_stock"></div>
+        </div>
+    <script>
+        for ( var ai = 0, ac = localStorage.length; ai <= ac; ai += 1 ) {
+            if ( localStorage[ai] ) {
+                document.getElementById('list_stock').innerHTML += '<div class="content_zone">' + localStorage[ai] + '</div>';
+            }
+        }
+        function add() {
+            var thecontent = prompt('Veuillez entrer votre texte:');
+            if ( thecontent.length > 0 ) {
+                document.getElementById('list_stock').innerHTML += '<div class="content_zone">' + thecontent + '</div>';
+                localStorage.setItem(parseInt(localStorage.length + 1), thecontent)
+            }
+        }
+        function remove() {
+            var theid = prompt('Donnez le numéro de la liste');
+            theid -= 1;
+            localStorage[1].removeItem;
+            window.location.href = "test.html";
+        }
+    </script>
+</body>
+</html>

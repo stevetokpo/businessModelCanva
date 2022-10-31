@@ -1,0 +1,16 @@
+/* #
+
+# */
+
+@import 'icons/material-design-iconic-font/css/materialdesignicons.min.css';
+@import 'bootstrap.css';
+.row > div {
+    border: 1px solid;
+    padding: 0;
+}
+.content_zone {
+    border: 1px solid;
+    padding: 5px;
+    margin-bottom: 2px;
+    font-size: 10px;
+}

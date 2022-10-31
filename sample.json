@@ -1,0 +1,74 @@
+{
+    "key_partners": {
+        "total_item": 5,
+        "item1": "Je suis le premier item de key_partners",
+        "item2": "Je suis le deuxieme item de key_partners",
+        "item3": "Je suis le troisieme item de key_partners",
+        "item4": "Je suis le quatrieme item de key_partners",
+        "item5": "Je suis le cinquieme item de key_partners"
+    },
+    "key_activities": {
+        "total_item": 5,
+        "item1": "Je suis le premier item de key_activities",
+        "item2": "Je suis le deuxieme item de key_activities",
+        "item3": "Je suis le troisieme item de key_activities",
+        "item4": "Je suis le quatrieme item de key_activities",
+        "item5": "Je suis le cinquieme item de key_activities"
+    },
+    "key_ressources": {
+        "total_item": 5,
+        "item1": "Je suis le premier item de key_ressources",
+        "item2": "Je suis le deuxieme item de key_ressources",
+        "item3": "Je suis le troisieme item de key_ressources",
+        "item4": "Je suis le quatrieme item de key_ressources",
+        "item5": "Je suis le cinquieme item de key_ressources"
+    },
+    "value_proposition": {
+        "total_item": 5,
+        "item1": "Je suis le premier item de value_proposition",
+        "item2": "Je suis le deuxieme item de value_proposition",
+        "item3": "Je suis le troisieme item de value_proposition",
+        "item4": "Je suis le quatrieme item de value_proposition",
+        "item5": "Je suis le cinquieme item de value_proposition"
+    },
+    "customer_relationship": {
+        "total_item": 5,
+        "item1": "Je suis le premier item de customer_relationship",
+        "item2": "Je suis le deuxieme item de customer_relationship",
+        "item3": "Je suis le troisieme item de customer_relationship",
+        "item4": "Je suis le quatrieme item de customer_relationship",
+        "item5": "Je suis le cinquieme item de customer_relationship"
+    },
+    "channels": {
+        "total_item": 5,
+        "item1": "Je suis le premier item de channels",
+        "item2": "Je suis le deuxieme item de channels",
+        "item3": "Je suis le troisieme item de channels",
+        "item4": "Je suis le quatrieme item de channels",
+        "item5": "Je suis le cinquieme item de channels"
+    },
+    "customer_segment": {
+        "total_item": 5,
+        "item1": "Je suis le premier item de customer_segment",
+        "item2": "Je suis le deuxieme item de customer_segment",
+        "item3": "Je suis le troisieme item de customer_segment",
+        "item4": "Je suis le quatrieme item de customer_segment",
+        "item5": "Je suis le cinquieme item de customer_segment"
+    },
+    "cost_structure": {
+        "total_item": 5,
+        "item1": "Je suis le premier item de cost_structure",
+        "item2": "Je suis le deuxieme item de cost_structure",
+        "item3": "Je suis le troisieme item de cost_structure",
+        "item4": "Je suis le quatrieme item de cost_structure",
+        "item5": "Je suis le cinquieme item de cost_structure"
+    },
+    "revenue_stream": {
+        "total_item": 5,
+        "item1": "Je suis le premier item de revenue_stream",
+        "item2": "Je suis le deuxieme item de revenue_stream",
+        "item3": "Je suis le troisieme item de revenue_stream",
+        "item4": "Je suis le quatrieme item de revenue_stream",
+        "item5": "Je suis le cinquieme item de revenue_stream"
+    }
+}
